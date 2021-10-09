@@ -1,20 +1,25 @@
-# Python program to display all the prime numbers within an interval
+# Program to check if a number is prime or not
 
-# change the values of lower and upper for a different result
-lower = 900
-upper = 1000
+num = 29
 
-# uncomment the following lines to take input from the user
-#lower = int(input("Enter lower range: "))
-#upper = int(input("Enter upper range: "))
+# To take input from the user
+#num = int(input("Enter a number: "))
 
-print("Prime numbers between",lower,"and",upper,"are:")
+# define a flag variable
+flag = False
 
-for num in range(lower,upper + 1):
-   # prime numbers are greater than 1
-   if num > 1:
-       for i in range(2,num):
-           if (num % i) == 0:
-               break
-       else:
-           print(num)
+# prime numbers are greater than 1
+if num > 1:
+    # check for factors
+    for i in range(2, num):
+        if (num % i) == 0:
+            # if factor is found, set flag to True
+            flag = True
+            # break out of loop
+            break
+
+# check if flag is True
+if flag:
+    print(num, "is not a prime number")
+else:
+    print(num, "is a prime number")
